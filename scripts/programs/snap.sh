@@ -2,6 +2,7 @@
 
 function install {
   snap list $1 &> /dev/null
+
   if [ $? -ne 0 ]; then
     echo "Installing: ${1}..."
     sudo snap install $1
