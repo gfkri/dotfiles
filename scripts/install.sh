@@ -19,7 +19,6 @@ function install {
 
 # Basics
 install awscli
-install chrome-gnome-shell
 install curl
 install exfat-utils
 install file
@@ -33,14 +32,41 @@ install tree
 install vim
 install wget
 
+# Build tools
+install build-essential
+install cmake
+install gcc
+install g++
+install libatlas-base-dev
+install libboost-all-dev
+install libblas-dev
+install libeigen3-dev
+install liblapack-dev
+install libprotobuf-dev
+
+# Misc
+install mlocate
+install unzip
+install figlet
+install lolcat
+install guake
+
 # Image processing
+install libopencv-contrib-dev
+install libopencv-dev
 install gimp
 install jpegoptim
 install optipng
+install imagemagick
+
+install nextcloud-desktop
 
 # Run all scripts in programs/
-for f in programs/*.sh; do bash "$f" -H; done
+# for f in programs/*.sh; do bash "$f" -H; done
 
 # Get all upgrades
 sudo apt upgrade -y
 sudo apt autoremove -y
+
+## Fun hello
+figlet "... and we're back!" | lolcat

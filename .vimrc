@@ -1,134 +1,100 @@
-" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" use plugin on GitHub repo
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jez/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-" use plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" use Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" use git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-" Display options
+set nocompatible
 set encoding=utf-8
-set showmode
-set showcmd
-set modeline
-set ruler
-set number
-"set notitle noicon
-set titlestring=%t
-" Persist color scheme in tmux
-set background=dark
-" Status bar
-set laststatus=2
-
-" Airline status line config
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme='bubblegum'
-
-" Turn on syntax highlighting.
-syntax on
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
-
-" Uncomment below to set the max textwidth. Use a value corresponding to the width of your screen.
-" set textwidth=79
-set formatoptions=tcqrn1
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
-" Automatically wrap text that extends beyond the screen length.
-set wrap
-set linebreak
-set showbreak=▹
-
-" Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
-
-" Fixes common backspace problems
-set backspace=indent,eol,start
-
-" Vim's auto indentation feature does not work properly with text copied from outisde of Vim. Press the <F2> key to toggle paste mode on/off.
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-
-" Lines of history to save
-set history=50
-
-" Enable starting a new buffer without being forced to write current changes
 set hidden
+filetype plugin indent on
+syntax on
+set synmaxcol=2048                " Don't syntax highlight super-long lines (for performance)
 
-" Direction keys for wrapped lines
-nnoremap <silent> k gk
-nnoremap <silent> j gj
-nnoremap <silent> <Up> gk
-nnoremap <silent> <Down> gj
-inoremap <silent> <Up> <Esc>gka
-inoremap <silent> <Down> <Esc>gja
+set autoindent                    " automatically indent lines and try to do it intelligently
+set smartindent
+set backspace=indent,eol,start    " backspace behaves 'normally'
 
-" Bash / emacs keys for command line
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+" set softtabstop=2
+set smartindent
+set shiftwidth=2                  " [2]
+set tabstop=2                     " tab is 4 spaces [2]
+set expandtab                   " use tabs
 
-" Change the cursor at insert mode
-let &t_ti.="\<Esc>[1 q"
-let &t_SI.="\<Esc>[5 q"
-let &t_EI.="\<Esc>[1 q"
-let &t_te.="\<Esc>[0 q"
+set textwidth=0
+set nolinebreak
+" set nowrap
+set wrapmargin=5
 
-" Toggle line-wrap
-map <Leader>w <Esc>:set wrap!<CR>
+set virtualedit=all               " Allow the cursor to go in to 'invalid' places
 
-" Open file under cursor in new tab
-map <Leader>t <Esc><C-W>gF<CR>:tabm<CR>
+set hlsearch                      " highlight search terms
+set incsearch                     " search incrementally
+set ignorecase                    " ignore case in searches...
+set smartcase                     " ...but not really. Case sensitive if capitals are included.
+set wrapscan                      " Set the search scan to wrap around the file
 
-" Base64 decode word under cursor
-nmap <Leader>b :!echo <C-R><C-W> \| base64 -d<CR>
+nmap <silent> <Leader>/ :nohlsearch<CR>  " Clear the find buffer
+nnoremap <CR> :noh<CR><CR>
 
-" grep recursively for word under cursor
-nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
+colorscheme nature
+
+set laststatus=2                  " always display a status line
+
+set number                        " show line numbers
+set numberwidth=5
+set ruler                         " display coordinates in status bar
+set showcmd                       " display unfinished commands
+set showmatch                     " show matching bracket (briefly jump)
+set showmode                      " display the current mode in the status bar
+set title                         " show file in titlebar
+set scrolloff=3                   " When the page starts to scroll, keep the cursor 3 lines from top/bottom
+set cmdheight=2                   " Make command line two lines high
+
+" Use the same symbols as TextMate for tabstops and EOLs
+" Show Invisibles (http://vimcasts.org/episodes/show-invisibles/) 
+set list
+set listchars=
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore+=*.swp,*.bak,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" Quickly edit/reload the vimrc file
+" http://www.derekwyatt.org/vim/the-vimrc-file/my-vimrc-file/
+nmap <silent> <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+
+" navigate around in buffers...
+map <Leader>n :bnext<CR>
+map <Leader>p :bprevious<CR>
+
+" Maps Alt-[h,j,k,l] to resizing a window split
+map <silent> <A-h> <C-w><
+map <silent> <A-j> <C-W>-
+map <silent> <A-k> <C-W>+
+map <silent> <A-l> <C-w>>
+
+" Maps Alt-[s.v] to horizontal and vertical split respectively
+map <silent> <A-s> :split<CR>
+map <silent> <A-v> :vsplit<CR>
+
+" Maps Alt-[n,p] for moving next and previous window respectively
+map <silent> <A-n> <C-w><C-w>
+map <silent> <A-p> <C-w><S-w>
+
+nnoremap ;; : " ?
+
+nmap <Leader>l :set list!<CR>               " Shortcut to rapidly toggle invisibles (`set list`)
+
+" sudo save file
+cmap w!! w !sudo tee % >/dev/null
+
+" Include user's local vim config
+if filereadable(expand("~/.vimrc.local"))
+	source ~/.vimrc.local
+endif
 
