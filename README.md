@@ -8,7 +8,7 @@ Add or delete programs in `scripts/install.sh` and `scripts/programs/` to modify
 
 Based on the amazing dotfiles repository of [victoriadrake](https://github.com/victoriadrake/dotfiles.git).
 
-**This repository is still under developlment, do not use blindly!** 
+**This repository is still under development, do not use blindly!** 
 
 ## Usage
 
