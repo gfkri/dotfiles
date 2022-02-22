@@ -1,4 +1,8 @@
 #!/bin/bash
+# Run from scripts folder!
+
+# Sourcing helper utils
+source ./utils.sh
 
 # Copy dotfiles
 ./copy.sh
@@ -6,62 +10,74 @@
 # Update Ubuntu and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
 
-function install {
-  which $1 &> /dev/null
-
-  if [ $? -ne 0 ]; then
-    echo "Installing: ${1}..."
-    sudo apt install -y $1
-  else
-    echo "Already installed: ${1}"
-  fi
-}
-
 # Basics
-install awscli
-install curl
-install exfat-utils
-install file
-install git
-install htop
-install jq
-install yq
-install nmap
-install openvpn
-install tree
-install vim
-install wget
+apt_install awscli
+apt_install curl
+apt_install exfat-utils
+apt_install file
+apt_install git
+apt_install gitg
+apt_install htop
+apt_install jq
+apt_install yq
+apt_install nmap
+apt_install openvpn
+apt_install tree
+apt_install vim
+apt_install wget
+apt_install unrar
+apt_install valgrind
+apt_install nemo
 
 # Build tools
-install build-essential
-install cmake
-install gcc
-install g++
-install libatlas-base-dev
-install libboost-all-dev
-install libblas-dev
-install libeigen3-dev
-install liblapack-dev
-install libprotobuf-dev
+apt_install build-essential
+apt_install cmake
+apt_install libatlas-base-dev
+apt_install libboost-all-dev
+apt_install libblas-dev
+apt_install libeigen3-dev
+apt_install liblapack-dev
+apt_install libprotobuf-dev
+apt_install byobu
+apt_install pdfshuffler
 
 # Misc
-install mlocate
-install unzip
-install figlet
-install lolcat
-install guake
+apt_install mlocate
+apt_install unzip
+apt_install figlet
+apt_install lolcat
+apt_install guake
 
 # Image processing
-install libopencv-contrib-dev
-install libopencv-dev
-install gimp
-install jpegoptim
-install optipng
-install imagemagick
+apt_install libopencv-contrib-dev
+apt_install libopencv-dev
+apt_install gimp
+apt_install jpegoptim
+apt_install optipng
+apt_install imagemagick
+apt_install inkscape
 
-install nextcloud-desktop
+# Audio and Video processing
+apt_install audacity
+apt_install ffmpeg
+apt_install vlc
 
-# Run all scripts in programs/
+# Text processing
+apt_install texlive
+apt_install texstudio
+apt_install zotero
+
+# Tools
+apt_install simplescreenrecorder
+apt_install sshfs
+apt_install xclip
+apt_install virtualbox
+apt_install virtualbox-qt
+apt_install virtualbox-dkms
+apt_install nextcloud-desktop
+
+
+# Run all scripts in programs
 for f in programs/*.sh; do bash "$f" -H; done
 
 # Get all upgrades

@@ -1,4 +1,12 @@
 #!/bin/bash
 
+# Sourcing helper utils
+source ./utils.sh
+
 echo "🐍 Installing Python"
-sudo apt install -y python3-venv python3-pip python3-opencv python3-numpy
+apt_install python3-venv
+apt_install python3-pip
+apt_install python3-dev
+apt_install python3-opencv
+apt_install python3-numpy
+apt_install python3-wheel
