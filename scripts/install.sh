@@ -46,7 +46,6 @@ apt_install mlocate
 apt_install unzip
 apt_install figlet
 apt_install lolcat
-apt_install guake
 
 # Image processing
 apt_install libopencv-contrib-dev
