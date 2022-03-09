@@ -1,10 +1,14 @@
-# Dotfiles for Ubuntu 21.10
+# Dotfiles for Ubuntu 20.04
 
-My preferred starting configuration. Currently using [Ubuntu 21.10 Impish Indri](https://ubuntu.com/download/desktop) + [Pop_OS! Shell](https://github.com/pop-os/shell) for tiling.
+My preferred starting configuration. Currently using [Ubuntu 20.04 Focal Fossa](https://ubuntu.com/download/desktop) + [Pop_OS! Shell](https://github.com/pop-os/shell) for tiling.
 
 The installation script (`scripts/install.sh`) will install a suggested serving of programs and applications using scripts in the `scripts/programs/` directory. Please verify that you want these before running the script.
 
 Add or delete programs in `scripts/install.sh` and `scripts/programs/` to modify your installation.
+
+Based on the amazing dotfiles repository of [victoriadrake](https://github.com/victoriadrake/dotfiles.git).
+
+**This repository is still under development, do not use blindly!** 
 
 ## Usage
 
@@ -13,7 +17,7 @@ After installing your fresh OS, [create any SSH keys](https://docs.github.com/ar
 If not generating new keys, place the ones you need in `.ssh/`. Remember to run `ssh-add` as well as `chmod 600 <key_name>`. Then clone this repository:
 
 ```sh
-git clone git@github.com:victoriadrake/dotfiles.git
+git clone git@github.com:gfkri/dotfiles.git
 
 # Or use HTTPS
 git clone https://github.com/victoriadrake/dotfiles.git
