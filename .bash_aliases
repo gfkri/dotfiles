@@ -1,0 +1,22 @@
+alias doi='docker image'
+alias doc='docker container'
+alias nvc='ssh gkrispel@nvcluster.tugraz.at'
+
+alias cp='cp -Rv'
+alias ls='ls --color=auto -ACF'
+alias ll='ls --color=auto -alF'
+alias grep='grep --color=auto'
+alias grepw='grep --color=auto -Hrnwi'
+alias mkdir='mkdir -pv'
+alias mv='mv -v'
+alias wget='wget -c'
+alias tree="tree -aI 'test*|.git|node_modules|resources'"
+
+alias gcom='git commit'
+alias gsup='git status'
+alias goto='git checkout'
+alias branches='git branch -v'
+alias firewood='for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done'
+alias remotes='git remote -v'
+alias forgotsubmodules='git submodule update --init'
+alias checkgit='~/.git-rundown.sh'
