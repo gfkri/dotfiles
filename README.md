@@ -1,6 +1,6 @@
-# Dotfiles for Ubuntu 20.04
+# Dotfiles for Ubuntu 22.04
 
-My preferred starting configuration. Currently using [Ubuntu 20.04 Focal Fossa](https://ubuntu.com/download/desktop) + [Pop_OS! Shell](https://github.com/pop-os/shell) for tiling.
+My preferred starting configuration. Currently using [Ubuntu 22.04](https://ubuntu.com/download/desktop) + [Pop_OS! Shell](https://github.com/pop-os/shell) for tiling.
 
 The installation script (`scripts/install.sh`) will install a suggested serving of programs and applications using scripts in the `scripts/programs/` directory. Please verify that you want these before running the script.
 
