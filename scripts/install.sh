@@ -13,13 +13,12 @@ sudo apt update && sudo apt full-upgrade -y
 # Basics
 apt_install awscli
 apt_install curl
-apt_install exfat-utils
+apt_install exfatprogs
 apt_install file
 apt_install git
 apt_install gitg
 apt_install htop
 apt_install jq
-apt_install yq
 apt_install nmap
 apt_install openvpn
 apt_install tree
@@ -39,7 +38,7 @@ apt_install libeigen3-dev
 apt_install liblapack-dev
 apt_install libprotobuf-dev
 apt_install byobu
-apt_install pdfshuffler
+apt_install pdfarranger
 
 # Misc
 apt_install mlocate
