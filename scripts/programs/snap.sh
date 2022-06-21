@@ -10,5 +10,4 @@ snap_install keepassxc
 snap_install signal-desktop
 snap_install meshlab
 snap_install spotify
-snap_install ferdi
 snap_install yq
