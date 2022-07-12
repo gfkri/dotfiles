@@ -27,6 +27,7 @@ apt_install wget
 apt_install unrar
 apt_install valgrind
 apt_install nemo
+apt_install gnome-shell-pomodoro
 
 # Build tools
 apt_install build-essential

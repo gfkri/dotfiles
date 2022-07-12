@@ -11,3 +11,5 @@ code --install-extension james-yu.latex-workshop
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension 076923.python-image-preview
 code --install-extension eamodio.gitlens
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension visualstudioexptteam.vscodeintellicode
