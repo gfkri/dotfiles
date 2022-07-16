@@ -6,7 +6,7 @@ function apt_install {
 
   if [ "" = "$PKG_OK" ]; then
     echo "Installing: ${1}..."
-    sudo apt install -y $1
+    sudo apt install -y "$@"
   else
     echo "Already installed: ${1}"
   fi
@@ -18,7 +18,7 @@ function snap_install {
 
   if [ $? -ne 0 ]; then
     echo "Installing: ${1}..."
-    sudo snap install $1
+    sudo snap install "$@"
   else
     echo "Already installed: ${1}"
   fi

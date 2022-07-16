@@ -75,7 +75,6 @@ apt_install virtualbox-qt
 apt_install virtualbox-dkms
 apt_install nextcloud-desktop
 
-
 # Run all scripts in programs
 for f in programs/*.sh; do bash "$f" -H; done
 

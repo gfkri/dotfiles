@@ -5,7 +5,7 @@ source ./utils.sh
 
 echo "Installing Snap Stuff"
 # Basics
-snap_install blender
+snap_install blender --classic
 snap_install cloudcompare
 snap_install keepassxc
 snap_install signal-desktop
