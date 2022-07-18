@@ -13,4 +13,4 @@ cp -r .oh-my-zsh ${HOME}
 
 # plugin installation
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-pip install thefuck
+sudo pip install thefuck

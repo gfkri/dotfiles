@@ -12,5 +12,6 @@ apt_install python3-numpy
 apt_install python3-wheel
 /usr/bin/python3 -m pip install --upgrade pip
 
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install python3.9
+sudo add-apt-repository -y ppa:deadsnakes/ppa
+apt_install python3.9
+apt_install python3.9-dev
