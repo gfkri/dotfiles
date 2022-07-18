@@ -11,3 +11,6 @@ apt_install python3-opencv
 apt_install python3-numpy
 apt_install python3-wheel
 /usr/bin/python3 -m pip install --upgrade pip
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.9
