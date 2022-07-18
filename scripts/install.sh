@@ -85,4 +85,4 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 ## Fun hello
-figlet "... and we're back!" | lolcat
+figlet "... re-login and we're back!" | lolcat
