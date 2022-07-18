@@ -10,3 +10,4 @@ apt_install python3-dev
 apt_install python3-opencv
 apt_install python3-numpy
 apt_install python3-wheel
+/usr/bin/python3 -m pip install --upgrade pip

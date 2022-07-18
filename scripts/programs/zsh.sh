@@ -10,3 +10,4 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 cd ../data
 cp .zshrc ${HOME}
 cp -r .oh-my-zsh ${HOME}
+pip install thefuck
