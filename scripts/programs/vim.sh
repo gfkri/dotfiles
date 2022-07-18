@@ -2,7 +2,7 @@
 
 echo "📦 Installing Vundle"
 
-cd ..
+cd ../data
 cp .vimrc ${HOME}
 cp -r .vim ${HOME}
 
