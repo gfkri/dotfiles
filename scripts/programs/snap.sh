@@ -13,4 +13,4 @@ snap_install meshlab
 snap_install spotify
 snap_install yq
 snap_install telegram-desktop
-snap_install alacritty --classic
+# snap_install alacritty --classic
