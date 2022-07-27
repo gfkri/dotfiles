@@ -13,3 +13,4 @@ code --install-extension 076923.python-image-preview
 code --install-extension eamodio.gitlens
 code --install-extension ms-vscode-remote.remote-ssh
 code --install-extension visualstudioexptteam.vscodeintellicode
+code --install-extension ms-vscode-remote.remote-containers
