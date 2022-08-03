@@ -14,3 +14,4 @@ code --install-extension eamodio.gitlens
 code --install-extension ms-vscode-remote.remote-ssh
 code --install-extension visualstudioexptteam.vscodeintellicode
 code --install-extension ms-vscode-remote.remote-containers
+code --install-extension visualstudioexptteam.intellicode-api-usage-examples
