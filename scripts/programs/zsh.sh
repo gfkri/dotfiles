@@ -12,5 +12,6 @@ cp .zshrc ${HOME}
 cp -r .oh-my-zsh ${HOME}
 
 # plugin installation
+apt_install fzf
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sudo pip install thefuck
