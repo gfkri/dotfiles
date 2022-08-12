@@ -7,6 +7,7 @@ echo "🐍 Installing Python"
 apt_install python3-venv
 apt_install python3-pip
 apt_install python3-dev
+apt_install python3-tk
 apt_install python3-opencv
 apt_install python3-numpy
 apt_install python3-wheel
@@ -16,3 +17,4 @@ apt_install python3-ipython
 sudo add-apt-repository -y ppa:deadsnakes/ppa
 apt_install python3.9
 apt_install python3.9-dev
+apt_install python3.9-tk

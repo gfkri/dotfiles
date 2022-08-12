@@ -6,5 +6,3 @@ echo deb https://eurkey.steffen.bruentjen.eu/download/debian/repo stable main | 
 sudo apt-get update
 sudo apt-get install eurkey
 setxkbmap eurkey
-
-
