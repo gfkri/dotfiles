@@ -28,6 +28,7 @@ apt_install unrar
 apt_install valgrind
 apt_install nemo
 apt_install gnome-shell-pomodoro
+apt_install texlive-full
 
 # Build tools
 apt_install build-essential
