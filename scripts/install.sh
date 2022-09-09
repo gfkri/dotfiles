@@ -54,7 +54,6 @@ apt_install gimp
 apt_install jpegoptim
 apt_install optipng
 apt_install imagemagick
-apt_install inkscape
 
 # Audio and Video processing
 apt_install audacity
