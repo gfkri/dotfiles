@@ -18,3 +18,4 @@ sudo add-apt-repository -y ppa:deadsnakes/ppa
 apt_install python3.9
 apt_install python3.9-dev
 apt_install python3.9-tk
+apt_install python3.9-venv

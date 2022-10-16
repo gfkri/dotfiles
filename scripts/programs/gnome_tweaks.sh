@@ -18,3 +18,4 @@ apt_install gir1.2-clutter-1.0
 apt_install gnome-system-monitor
 
 install_extension system-monitor-next@paradoxxx.zero.gmail.com
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false

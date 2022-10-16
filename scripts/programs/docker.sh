@@ -17,7 +17,9 @@ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
             sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
             sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io nvidia-docker2
+sudo apt install -y docker-ce docker-ce-cli containerd.io nvidia-docker2 nvidia-container-runtime
+sudo cp ../data/docker/daemon.json /etc/docker/
+
 sudo systemctl restart docker
 sudo groupadd docker
 sudo usermod -aG docker $USER

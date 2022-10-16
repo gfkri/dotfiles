@@ -9,6 +9,7 @@ source ./utils.sh
 
 # Update Ubuntu and get standard repository programs
 sudo apt update && sudo apt full-upgrade -y
+sudo ubuntu-drivers install
 
 # Basics
 apt_install awscli
@@ -77,7 +78,7 @@ apt_install figlet
 apt_install lolcat
 
 # Run all scripts in programs
-for f in programs/*.sh; do bash "$f" -H; done
+#for f in programs/*.sh; do bash "$f" -H; done
 
 # Get all upgrades
 sudo apt upgrade -y

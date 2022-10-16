@@ -3,7 +3,7 @@
 source ./utils.sh
 
 echo "📁 Installing Inkscape"
-sudo add-apt-repository ppa:inkscape.dev/stable
+sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo apt update
 apt_install inkscape
 apt_install gir1.2-gtksource-3.0
