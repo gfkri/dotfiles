@@ -9,3 +9,5 @@ wget -qO- https://raw.githubusercontent.com/retorquere/zotero-deb/master/install
 sudo apt update
 apt_install zotero
 
+echo "[MANUAL] Put the content of data/zotero_bb_postscript.js to 'Zotero->Edit->Preferences->Better BibTex->Export->postscript'! "
+
