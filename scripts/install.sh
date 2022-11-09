@@ -41,6 +41,7 @@ apt_install liblapack-dev
 apt_install libprotobuf-dev
 apt_install byobu
 apt_install pdfarranger
+apt_install recoll
 
 # Misc
 apt_install mlocate

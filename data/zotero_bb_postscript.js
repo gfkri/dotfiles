@@ -4,6 +4,8 @@ if (Translator.BetterBibTeX) {
     tex.remove('address');
     tex.remove('doi');
     tex.remove('month');
+    tex.remove('editor');
+    tex.remove('series');
   
     if (tex.entrytype === 'inproceedings') {
       tex.remove('pages');
