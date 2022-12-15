@@ -7,6 +7,8 @@ rm -rf ./vscode.deb
 
 code --install-extension ms-python.python
 code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.cpptools-extension-pack
+code --install-extension twxs.cmake
 code --install-extension james-yu.latex-workshop
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension 076923.python-image-preview
