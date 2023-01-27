@@ -19,3 +19,4 @@ code --install-extension ms-vscode-remote.remote-containers
 code --install-extension visualstudioexptteam.intellicode-api-usage-examples
 code --install-extension valentjn.vscode-ltex                                       # tex support
 code --install-extension YuTengjing.open-in-external-app                            # open files with external/system application on right click
+code --install-extension shalimski.swapdiff
