@@ -20,7 +20,7 @@ if (Translator.BetterBibTeX) {
     // Zotero.debug(tex)
   }
 
-  if(tex.has.booktitle && ['NIPS','CVPR','ECCV','AAAI','ICCV','BMVC','ICML','SPSYMP','SIGKD','ICLRW','IJCNN','ICIP','ICLR', 'WACV'].includes(tex.has.booktitle.value))  {
+  if(tex.has.booktitle && ['NIPS','CVPR','ECCV','AAAI','ICCV','BMVC','ICML','SPSYMP','SIGKD','ICLRW','IJCNN','ICIP','ICLR', 'WACV', 'NAACLHLT'].includes(tex.has.booktitle.value))  {
     tex.has.booktitle.bibtex = tex.has.booktitle.value
     // Zotero.debug(tex.has.booktitle)
   }
