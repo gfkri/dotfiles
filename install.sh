@@ -58,7 +58,7 @@ done
 if ! is_minimal; then
     # Oh My Zsh
     print_section 0 "📦 Oh My Zsh"
-    if ! dir_exists "${HOME}/.oh-my-zsh"; then
+    if ! [ -f "${HOME}/.oh-my-zsh/oh-my-zsh.sh" ]; then
         if is_dryrun; then
             print_section 1 "⏭️  [DRY-RUN] Would install"
         else
