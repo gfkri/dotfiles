@@ -36,29 +36,10 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo ""
 fi
 
-# Stow dotfiles
-print_section 0 "🔗 Stow Dotfiles"
-STOW_FOLDERS=(git ohmyzsh p10k tmux vim zsh)
-[[ "$OSTYPE" == "darwin"* ]] && STOW_FOLDERS=(ghostty "${STOW_FOLDERS[@]}")
-cd "$SCRIPT_DIR" || exit 1
-
-for folder in "${STOW_FOLDERS[@]}"; do
-    if [ -d "$folder" ]; then
-        if is_dryrun; then
-            print_section 1 "⏭️  [DRY-RUN] Would stow $folder"
-        else
-            print_section 1 "➜ Stowing $folder..."
-            stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
-        fi
-    else
-        print_section 1 "⚠️  $folder not found (skipping)"
-    fi
-done
-
 if ! is_minimal; then
     # Oh My Zsh
     print_section 0 "📦 Oh My Zsh"
-    if ! [ -f "${HOME}/.oh-my-zsh/oh-my-zsh.sh" ]; then
+    if ! dir_exists "${HOME}/.oh-my-zsh"; then
         if is_dryrun; then
             print_section 1 "⏭️  [DRY-RUN] Would install"
         else
@@ -134,6 +115,25 @@ if ! is_minimal; then
 
     echo ""
 fi
+
+# Stow dotfiles
+print_section 0 "🔗 Stow Dotfiles"
+STOW_FOLDERS=(git ohmyzsh p10k tmux vim zsh)
+[[ "$OSTYPE" == "darwin"* ]] && STOW_FOLDERS=(ghostty "${STOW_FOLDERS[@]}")
+cd "$SCRIPT_DIR" || exit 1
+
+for folder in "${STOW_FOLDERS[@]}"; do
+    if [ -d "$folder" ]; then
+        if is_dryrun; then
+            print_section 1 "⏭️  [DRY-RUN] Would stow $folder"
+        else
+            print_section 1 "➜ Stowing $folder..."
+            stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
+        fi
+    else
+        print_section 1 "⚠️  $folder not found (skipping)"
+    fi
+done
 
 # Tools (cross-platform)
 print_section 0 "🛠️  Tools"
