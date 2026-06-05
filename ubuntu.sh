@@ -24,7 +24,7 @@ if ! command_exists eza; then
     else
         print_section 2 "Installing eza..."
         curl -Lo /tmp/eza.tar.gz \
-            "https://github.com/eza-community/eza/releases/latest/download/eza_${ARCH}-unknown-linux-musl.tar.gz"
+            "https://github.com/eza-community/eza/releases/latest/download/eza_${ARCH}-unknown-linux-gnu.tar.gz"
         $SUDO tar -xzf /tmp/eza.tar.gz -C /usr/local/bin eza
         rm /tmp/eza.tar.gz
         print_section 2 "✅ eza installed"
