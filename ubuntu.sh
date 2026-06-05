@@ -9,7 +9,12 @@ ARCH=$(uname -m)
 
 # Core packages via apt
 print_section 1 "📦 Packages"
-APT_PACKAGES=(stow tmux fzf tig curl git zsh unzip)
+APT_PACKAGES=(
+    stow tmux fzf tig curl git zsh unzip wget
+    python3 python3-pip python3-dev python3-venv
+    build-essential
+    vim jq locales
+)
 if is_dryrun; then
     print_section 2 "⏭️  [DRY-RUN] Would apt install: ${APT_PACKAGES[*]}"
 else
