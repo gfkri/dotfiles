@@ -132,11 +132,10 @@ for folder in "${STOW_FOLDERS[@]}"; do
             if is_force_stow; then
                 stow --adopt --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
             else
-                STOW_OUT=$(stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1)
-                if [ $? -ne 0 ]; then
-                    print_section 2 "⚠️  Conflict — skipping $folder (use --force-stow to overwrite)"
-                else
+                if STOW_OUT=$(stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1); then
                     echo "$STOW_OUT" | sed 's/^/    /'
+                else
+                    print_section 2 "⚠️  Conflict — skipping $folder (use --force-stow to overwrite)"
                 fi
             fi
         fi
