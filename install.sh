@@ -7,8 +7,9 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Parse command-line arguments
 for arg in "$@"; do
     case "$arg" in
-        --dry-run|-d) export DRYRUN=1 ;;
-        --minimal|-m) export MINIMAL=1 ;;
+        --dry-run|-d)    export DRYRUN=1 ;;
+        --minimal|-m)    export MINIMAL=1 ;;
+        --force-stow|-f) export FORCE_STOW=1 ;;
     esac
 done
 
@@ -128,12 +129,24 @@ for folder in "${STOW_FOLDERS[@]}"; do
             print_section 1 "⏭️  [DRY-RUN] Would stow $folder"
         else
             print_section 1 "➜ Stowing $folder..."
-            stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
+            if is_force_stow; then
+                stow --adopt --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
+            else
+                STOW_OUT=$(stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1)
+                if [ $? -ne 0 ]; then
+                    print_section 2 "⚠️  Conflict — skipping $folder (use --force-stow to overwrite)"
+                else
+                    echo "$STOW_OUT" | sed 's/^/    /'
+                fi
+            fi
         fi
     else
         print_section 1 "⚠️  $folder not found (skipping)"
     fi
 done
+if is_force_stow; then
+    git -C "$SCRIPT_DIR" checkout -- . 2>/dev/null || true
+fi
 
 # Tools (cross-platform)
 print_section 0 "🛠️  Tools"

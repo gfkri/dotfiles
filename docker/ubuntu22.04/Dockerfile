@@ -9,6 +9,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone dotfiles and run full setup
+ARG CACHEBUST=1
 RUN git clone https://github.com/gfkri/dotfiles.git /root/.dotfiles \
     && /root/.dotfiles/install.sh
 

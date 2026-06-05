@@ -15,6 +15,11 @@ is_minimal() {
     [ "${MINIMAL:-0}" = "1" ]
 }
 
+# Helper to check if force-stow mode is active
+is_force_stow() {
+    [ "${FORCE_STOW:-0}" = "1" ]
+}
+
 # Execute command or show what would execute
 run_cmd() {
     if is_dryrun; then

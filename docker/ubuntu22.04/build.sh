@@ -4,7 +4,7 @@ set -euo pipefail
 TAG="${1:-gfkri/dotfiles:ubuntu22.04}"
 
 docker build \
-    --no-cache \
+    --build-arg CACHEBUST="$(date +%s)" \
     --tag "$TAG" \
     --file "$(dirname "$0")/Dockerfile" \
     .
