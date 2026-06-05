@@ -1,0 +1,23 @@
+# --- Core Behavior ---
+initial-window = false
+
+# --- Fonts (Required for p10k) ---
+font-family = "MesloLGS NF"
+font-size = 13
+
+# --- Dropdown / Quake Mode (F12) ---
+keybind = global:f12=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.2
+quick-terminal-size = 60%
+
+# --- UI & Reloading ---
+keybind = cmd+r=reload_config
+mouse-hide-while-typing = true
+cursor-style = block
+
+# Theme
+theme = iTerm2 Smoooooth
+
+#macos-hidden = always
+notify-on-command-finish = unfocused

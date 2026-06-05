@@ -1,0 +1,11 @@
+[user]
+	name = Georg Krispel
+	email = georg@krispel.eu
+[core]
+	pager = less -XRF
+[alias]
+	tree = log --graph --pretty=oneline --abbrev-commit
+	treeall = log --graph --all --decorate --oneline --boundary
+	tree2 = log 	--color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[pull]
+	rebase = true
