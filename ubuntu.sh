@@ -74,20 +74,3 @@ if [[ ! -d "$HOME/.fzf" ]]; then
 else
     print_section 2 "✅ fzf already installed"
 fi
-
-# thefuck — shell command corrector (requires Python)
-if ! command_exists thefuck; then
-    if is_dryrun; then
-        print_section 2 "⏭️  [DRY-RUN] Would install thefuck"
-    else
-        if command_exists pipx; then
-            print_section 2 "Installing thefuck..."
-            pipx install git+https://github.com/nvbn/thefuck --quiet
-            print_section 2 "✅ thefuck installed"
-        else
-            print_section 2 "⚠️  pipx not found, skipping thefuck"
-        fi
-    fi
-else
-    print_section 2 "✅ thefuck already installed"
-fi

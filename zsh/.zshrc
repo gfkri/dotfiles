@@ -82,7 +82,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 [[ -f /.dockerenv ]] && export ZSH_TMUX_AUTOSTART=true
-plugins=(git thefuck zsh-autosuggestions fzf tmux)
+plugins=(git zsh-autosuggestions fzf tmux)
 
 [[ -d "${ZSH:-}" ]] && source $ZSH/oh-my-zsh.sh
 
