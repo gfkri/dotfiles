@@ -27,6 +27,8 @@ RUN git clone https://github.com/gfkri/dotfiles.git /home/${USERNAME}/.dotfiles 
 
 ENV SHELL=/bin/zsh
 ENV USERNAME=${USERNAME}
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
 WORKDIR /home/${USERNAME}
 

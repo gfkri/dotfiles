@@ -20,6 +20,7 @@ if is_dryrun; then
 else
     $SUDO apt-get update -qq
     $SUDO apt-get install -y "${APT_PACKAGES[@]}"
+    $SUDO locale-gen en_US.UTF-8
 fi
 
 # eza — not in default Ubuntu repos, install binary from GitHub releases
