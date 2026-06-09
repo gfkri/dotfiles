@@ -11,7 +11,7 @@ ARCH=$(uname -m)
 print_section 1 "📦 Packages"
 APT_PACKAGES=(
     stow tmux tig curl git zsh unzip wget xclip
-    python3 python3-pip python3-dev python3-venv pipx
+    python3 python3-pip python3-dev python3-venv pipx python3-setuptools
     build-essential ncurses-term
     vim jq locales
 )
