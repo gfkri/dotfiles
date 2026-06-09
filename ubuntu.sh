@@ -11,7 +11,7 @@ ARCH=$(uname -m)
 print_section 1 "📦 Packages"
 APT_PACKAGES=(
     stow tmux fzf tig curl git zsh unzip wget xclip
-    python3 python3-pip python3-dev python3-venv
+    python3 python3-pip python3-dev python3-venv pipx
     build-essential
     vim jq locales
 )
@@ -66,12 +66,12 @@ if ! command_exists thefuck; then
     if is_dryrun; then
         print_section 2 "⏭️  [DRY-RUN] Would install thefuck"
     else
-        if command_exists pip3; then
+        if command_exists pipx; then
             print_section 2 "Installing thefuck..."
-            pip3 install thefuck --quiet
+            pipx install thefuck --quiet
             print_section 2 "✅ thefuck installed"
         else
-            print_section 2 "⚠️  pip3 not found, skipping thefuck"
+            print_section 2 "⚠️  pipx not found, skipping thefuck"
         fi
     fi
 else

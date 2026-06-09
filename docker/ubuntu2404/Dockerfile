@@ -1,11 +1,11 @@
 # Base image — swap for pytorch/pytorch:latest for ML work
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 ARG USERNAME=appuser
-ARG USER_UID=1000
-ARG USER_GID=1000
+ARG USER_UID=1001
+ARG USER_GID=1001
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates git curl sudo gosu \
@@ -26,6 +26,8 @@ RUN git clone https://github.com/gfkri/dotfiles.git /home/${USERNAME}/.dotfiles 
 
 ENV SHELL=/bin/zsh
 ENV USERNAME=${USERNAME}
+
+WORKDIR /home/${USERNAME}
 
 USER root
 ENTRYPOINT ["/entrypoint.sh"]
