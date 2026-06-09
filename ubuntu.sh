@@ -10,7 +10,7 @@ ARCH=$(uname -m)
 # Core packages via apt
 print_section 1 "📦 Packages"
 APT_PACKAGES=(
-    stow tmux fzf tig curl git zsh unzip wget
+    stow tmux fzf tig curl git zsh unzip wget xclip
     python3 python3-pip python3-dev python3-venv
     build-essential
     vim jq locales
