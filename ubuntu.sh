@@ -10,9 +10,9 @@ ARCH=$(uname -m)
 # Core packages via apt
 print_section 1 "📦 Packages"
 APT_PACKAGES=(
-    stow tmux fzf tig curl git zsh unzip wget xclip
+    stow tmux tig curl git zsh unzip wget xclip
     python3 python3-pip python3-dev python3-venv pipx
-    build-essential
+    build-essential ncurses-term
     vim jq locales
 )
 if is_dryrun; then
@@ -59,6 +59,20 @@ if ! command_exists jless; then
     fi
 else
     print_section 2 "✅ jless already installed"
+fi
+
+# fzf — install from git so omz fzf plugin finds ~/.fzf/shell/key-bindings.zsh
+if [[ ! -d "$HOME/.fzf" ]]; then
+    if is_dryrun; then
+        print_section 2 "⏭️  [DRY-RUN] Would install fzf"
+    else
+        print_section 2 "Installing fzf..."
+        git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+        "$HOME/.fzf/install" --all --no-update-rc --no-bash --no-fish
+        print_section 2 "✅ fzf installed"
+    fi
+else
+    print_section 2 "✅ fzf already installed"
 fi
 
 # thefuck — shell command corrector (requires Python)
