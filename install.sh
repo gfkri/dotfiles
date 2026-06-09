@@ -130,7 +130,7 @@ for folder in "${STOW_FOLDERS[@]}"; do
         else
             print_section 1 "➜ Stowing $folder..."
             if is_force_stow; then
-                stow --adopt --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
+                stow --adopt --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1 | sed 's/^/    /'
             else
                 if STOW_OUT=$(stow --restow --target="$HOME" --dir="$SCRIPT_DIR" "$folder" 2>&1); then
                     echo "$STOW_OUT" | sed 's/^/    /'
