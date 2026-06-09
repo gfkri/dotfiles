@@ -83,6 +83,7 @@ if ! command_exists thefuck; then
         if command_exists pipx; then
             print_section 2 "Installing thefuck..."
             pipx install thefuck --quiet
+            pipx inject thefuck setuptools --quiet
             print_section 2 "✅ thefuck installed"
         else
             print_section 2 "⚠️  pipx not found, skipping thefuck"
