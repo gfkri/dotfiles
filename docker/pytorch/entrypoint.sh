@@ -15,4 +15,6 @@ if [ "$LOCAL_GID" != "$(id -g "${USERNAME}")" ]; then
     fi
 fi
 
+export HOME="/home/${USERNAME}"
+cd "${HOME}"
 exec gosu "${USERNAME}" "$@"
