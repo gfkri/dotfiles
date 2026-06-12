@@ -1,5 +1,6 @@
 ARG PYTORCH_TAG=cuda-13.0.2-auto
-FROM --platform=linux/amd64 vastai/pytorch:${PYTORCH_TAG}
+ARG BUILD_PLATFORM=linux/amd64
+FROM --platform=${BUILD_PLATFORM} vastai/pytorch:${PYTORCH_TAG}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -11,7 +12,11 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates git curl sudo gosu \
     && rm -rf /var/lib/apt/lists/*
 
-RUN groupadd -g ${USER_GID} ${USERNAME} \
+RUN existing_user=$(getent passwd ${USER_UID} | cut -d: -f1) \
+    && [ -n "$existing_user" ] && userdel -r "$existing_user" || true \
+    && existing_group=$(getent group ${USER_GID} | cut -d: -f1) \
+    && [ -n "$existing_group" ] && groupdel "$existing_group" || true \
+    && groupadd -g ${USER_GID} ${USERNAME} \
     && useradd -u ${USER_UID} -g ${USERNAME} -m -s /bin/bash ${USERNAME} \
     && echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USERNAME}
 
