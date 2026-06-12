@@ -16,5 +16,6 @@ if [ "$LOCAL_GID" != "$(id -g "${USERNAME}")" ]; then
 fi
 
 export HOME="/home/${USERNAME}"
+[ "$TERM" = "xterm" ] && export TERM=xterm-256color
 cd "${HOME}"
 exec gosu "${USERNAME}" "$@"
