@@ -25,10 +25,7 @@ RUN chmod +x /entrypoint.sh
 
 USER ${USERNAME}
 ARG CACHEBUST=1
-RUN git clone https://github.com/gfkri/dotfiles.git /home/${USERNAME}/.dotfiles \
-    && /home/${USERNAME}/.dotfiles/install.sh --force-stow \
-    && sudo usermod -s /bin/zsh ${USERNAME} \
-    && /home/${USERNAME}/.tmux/plugins/tpm/bin/install_plugins
+RUN bash <(curl -fsSL https://raw.githubusercontent.com/gfkri/dotfiles/main/provision.sh)
 
 ENV SHELL=/bin/zsh
 ENV USERNAME=${USERNAME}
