@@ -9,4 +9,4 @@ cd "${HOME}"
 rm -rf .dotfiles
 git clone https://github.com/gfkri/dotfiles.git .dotfiles
 ./.dotfiles/install.sh --force-stow "$@"
-~/.tmux/plugins/tpm/bin/install_plugins
+TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/" ~/.tmux/plugins/tpm/bin/install_plugins
