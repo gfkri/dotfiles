@@ -20,7 +20,7 @@ fi
 
 # Install Homebrew packages
 print_section 1 "📦 Packages"
-PACKAGES=(stow tmux thefuck fzf eza jless terminal-notifier tig)
+PACKAGES=(stow tmux thefuck fzf eza jless terminal-notifier tig cmake)
 for pkg in "${PACKAGES[@]}"; do
     if ! command_exists "$pkg"; then
         if is_dryrun; then
